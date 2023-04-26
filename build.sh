@@ -1,5 +1,7 @@
 # cargo binaries installed by building from source
 cargo install \
+    cargo-about \
+    cargo-apk \
     cargo-auditable \
     cargo-deny \
     cargo-fuzz \
@@ -17,10 +19,15 @@ cargo install \
     hyperfine \
     jless \
     mdbook \
+    mdbook-catppuccin \
+    mdbook-mermaid \
     mdbook-toc \
     puffin_viewer \
     rg \
+    tldr \
     tokei \
+    topgrade \
     twiggy \
-    typos-cli 
+    typos-cli \
+    ytop
 
