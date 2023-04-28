@@ -1,4 +1,4 @@
 export PATH="$HOME/.ark/bin:$PATH"
 
-source cargo.sh
-source git.sh
+source $HOME/.dotfiles/cargo.sh
+source $HOME/.dotfiles/git.sh
