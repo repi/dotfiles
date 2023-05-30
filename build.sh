@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # cargo binaries installed by building from source
 cargo install \
     cargo-about \

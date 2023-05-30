@@ -1,3 +1,4 @@
+#!/bin/bash
 alias gpf="git push --force-with-lease"
 
 alias gh-pr="gh pr create --fill"

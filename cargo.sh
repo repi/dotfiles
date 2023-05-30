@@ -1,3 +1,5 @@
+#!/bin/bash
+
 export CARGO_INSTALL_OPTS=--locked
 export INSTA_TEST_RUNNER=nextest
 export CARGO_INCREMENTAL=1
