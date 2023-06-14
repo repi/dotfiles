@@ -18,5 +18,8 @@ alias cvt="cargo vet trust --criteria safe-to-deploy"
 alias cvs="cargo vet suggest"
 alias cvp="cargo vet prune && cargo vet"
 alias cv="cargo vet"
+alias cvr="cargo vet regenerate exemptions && cargo vet regenerate imports && cargo vet regenerate audit-as-crates-io"
 
 alias cud="cargo update --dry-run"
+
+alias cdc="cargo deny --all-features check"
