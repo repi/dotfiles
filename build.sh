@@ -26,7 +26,7 @@ cargo install \
     mdbook-toc \
     puffin_viewer \
     ripgrep \
-    tldr \
+    tealdeer \
     tokei \
     topgrade \
     twiggy \
