@@ -25,11 +25,10 @@ cargo install \
     mdbook-mermaid \
     mdbook-toc \
     puffin_viewer \
-    rg \
+    ripgrep \
     tldr \
     tokei \
     topgrade \
     twiggy \
     typos-cli \
-    ytop
-
+    ytop 
