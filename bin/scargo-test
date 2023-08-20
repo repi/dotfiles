@@ -1,0 +1,46 @@
+#!/usr/bin/bash
+
+# run cargo sandboxed with bubblewrap
+# based on https://github.com/rust-secure-code/cargo-sandbox/issues/3
+
+# another older version:
+# alias scargo="bwrap \
+#     --unshare-ipc --unshare-pid --unshare-uts --unshare-cgroup \
+#     --ro-bind / / --dev /dev --tmpfs /tmp \
+#     --bind $PWD/target $PWD/target \
+#     --bind $HOME/.cargo/git $HOME/.cargo/git \
+#     --bind $HOME/.cargo/registry $HOME/.cargo/registry \
+#     -- cargo"
+
+set -eu
+
+main() {
+    local pwd="${PWD}"
+    local home="/home/tim"
+    local project="${home}/$(basename ${pwd})"
+
+    env -i bwrap \
+        --unshare-ipc \
+        --unshare-pid \
+        --unshare-uts \
+        --unshare-cgroup \
+        --new-session \
+        --ro-bind / / \
+        --tmpfs /home \
+        --tmpfs /tmp \
+        --tmpfs /sys \
+        --tmpfs /opt \
+        --dev /dev \
+        --dir /home/cargo \
+        --ro-bind "${HOME}"/.cargo "${home}"/.cargo \
+        --bind "${HOME}"/.cargo/git "${home}"/.cargo/git \
+        --bind "${HOME}"/.cargo/registry "${home}"/.cargo/registry \
+        --ro-bind "${HOME}"/.rustup "${home}"/.rustup \
+        --ro-bind "${pwd}" "${project}" \
+        --bind "${pwd}"/target "${project}"/target \
+        --chdir "${project}" \
+        --setenv PATH "/bin:/sbin:/usr/bin:/usr/sbin:${home}/.cargo/bin" \
+        -- cargo "${@}"
+}
+
+main "${@}"
