@@ -2,7 +2,7 @@
 set -eu
 
 cd ark
-hyperfine --export-markdown compile-ark.md --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' \
+hyperfine --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' \
     'cargo check' \
     'cargo clippy' \
     'cargo build -r' \
@@ -10,7 +10,7 @@ hyperfine --export-markdown compile-ark.md --warmup 0 --runs=1 --setup 'cargo fe
 cd ..
 
 cd ark-modules
-hyperfine --export-markdown compile-ark-mods.md --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' \
+hyperfine --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' \
     'cargo check' \
     'cargo clippy' \
     'cargo build -r' \
