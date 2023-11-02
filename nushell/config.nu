@@ -790,12 +790,13 @@ alias cita = cargo insta test --accept
 alias cvt = cargo vet trust --criteria safe-to-deploy
 # Vet suggestions
 alias cvs = cargo vet suggest
-
-#alias cvp = cargo vet prune && cargo vet
+# Vet with prune
+alias cvp = do { cargo vet prune; cargo vet }
 
 # Vet summary
 alias cv = cargo vet
-#alias cvr = cargo vet regenerate exemptions && cargo vet regenerate imports && cargo vet regenerate audit-as-crates-io
+# Vet full regenerate
+alias cvr = do { cargo vet regenerate exemptions; cargo vet regenerate imports; cargo vet regenerate audit-as-crates-io }
 
 # Check for Cargo updates
 alias cud = cargo update --dry-run
