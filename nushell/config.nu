@@ -775,8 +775,8 @@ alias cc = cargo clippy
 alias cbr = cargo build --release
 # Run tests
 alias cnr = cargo nextest run
-
-#alias cnra = INSTA_FORCE_PASS=1 INSTA_UPDATE=always cargo nextest run
+# Run tests & accept snapshots
+alias cnra = do { $env.INSTA_FORCE_PASS = 1; $env.INSTA_UPDATE = always; cargo nextest run }
 
 # Run release
 alias crr = cargo run --release
