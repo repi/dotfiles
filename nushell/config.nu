@@ -795,7 +795,14 @@ alias cdc = cargo deny --all-features check
 
 
 # Git pull latest
-alias gpr = git pull --rebase --autostash
+alias gpr = git pull --rebase
+# Git pull latest autostash
+alias gupa = git pull --rebase --autostash
+# Git push
+alias gp = git push
+# Git ammend commit with current
+alias gcan! = git commit -v -a --no-edit --amend
+
 # Git PR create
 alias gh-pr = gh pr create --fill
 # Git PR create & automerge
