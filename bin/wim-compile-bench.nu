@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 
 cd wim-app
-hyperfine --export-json /tmp/wim-app-bench.json --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' 'cargo check' 'cargo clippy' 'cargo build -r' 'cargo build -r -p ark-client'
+hyperfine --export-json /tmp/wim-app-bench.json --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' 'cargo check' 'cargo clippy' 'cargo build -r' 'cargo build -r -p ark-client' `cargo build -r -p ark-cli`
 cd ..
 
 cd wim-mod
