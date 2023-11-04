@@ -106,5 +106,6 @@ $env.NU_PLUGIN_DIRS = [
 $env.GH_NO_UPDATE_NOTIFIER = 0
 
 # setup starship shell
+$env.STARSHIP_CONFIG = $env.HOME + '/.dotfiles/starship/starship.toml'
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
