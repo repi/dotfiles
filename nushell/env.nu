@@ -104,3 +104,7 @@ $env.NU_PLUGIN_DIRS = [
 
 # no need to get notifications about gh CLI updates available
 $env.GH_NO_UPDATE_NOTIFIER = 0
+
+# setup starship shell
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu

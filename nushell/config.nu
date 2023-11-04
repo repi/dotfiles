@@ -807,3 +807,7 @@ alias gcan! = git commit -v -a --no-edit --amend
 alias gh-pr = gh pr create --fill
 # Git PR create & automerge
 alias gh-pr-yolo = gh pr create --fill --label "s: skip review 🚀️"
+
+
+# setup starship shell
+use ~/.cache/starship/init.nu
