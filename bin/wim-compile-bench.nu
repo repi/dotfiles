@@ -10,7 +10,7 @@ hyperfine --export-json /tmp/wim-mod-bench.json --warmup 0 --runs=2 --setup 'car
 # combine the benchmark outputs to single table
 let output_wim_mod = open /tmp/wim-mod-bench.json | get results | insert repo wim-mod
 let output_wim_app = open /tmp/wim-app-bench.json | get results | insert repo wim-app
-let combined = $output_wim_mod | merge $output_wim_app
+let combined = $output_wim_mod | append $output_wim_app | move repo --before command
 
 $combined | save bench.json
 
