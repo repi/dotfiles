@@ -768,6 +768,8 @@ $env.config = {
 }
 
 
+# no need to get notifications about gh CLI updates available
+$env.GH_NO_UPDATE_NOTIFIER = 0
 
 # Run clippy
 alias cc = cargo clippy
