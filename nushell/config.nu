@@ -756,7 +756,8 @@ $env.config = {
     ]
 }
 
-
+# use VS Code as editor to spawn by nu
+$env.config.buffer_editor = code
 
 # Run clippy
 alias cc = cargo clippy
