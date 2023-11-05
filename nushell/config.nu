@@ -795,6 +795,9 @@ alias cud = cargo update --dry-run
 alias cdc = cargo deny --all-features check
 
 
+# TODO: may want to switch to the full list of standard git aliases in: https://github.com/nushell/nu_scripts/blob/main/aliases/git/git-aliases.nu
+# there is also set of git completions in https://github.com/nushell/nu_scripts/blob/main/custom-completions/git/git-completions.nu
+
 # Git pull latest
 alias gpr = git pull --rebase
 # Git pull latest autostash
