@@ -12,6 +12,6 @@ let output_wim_mod = open /tmp/wim-mod-bench.json | get results | insert repo wi
 let output_wim_app = open /tmp/wim-app-bench.json | get results | insert repo wim-app
 let combined = $output_wim_mod | append $output_wim_app | move repo --before command
 
-$combined | save bench.json
+$combined | save bench.json --force
 
 $combined
