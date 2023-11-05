@@ -30,7 +30,7 @@ let info = {
 let entry = $info | insert "results" $combined
 
 # save
-$entry | save bench.json --force
+$entry | save wim-compile-bench.json --force
 
 # output
 $entry
