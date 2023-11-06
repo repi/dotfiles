@@ -24,11 +24,7 @@ let info = {
     cpu_cores: (sys | get cpu | length)
     memory: (sys).mem.total
     machine_name: (sys).host.hostname
-    user: (try { 
-        $env.USER # unix
-    } catch { 
-        $env.USERNAME # windows
-    }),
+    user: ($env.USER? | default $env.USERNAME), # unix & windows handling, can switch to `whoami` once 0.86.1 is out (started thread https://github.com/nushell/nushell/discussions/10979)
     rust: (rustc --version)
 }
 
