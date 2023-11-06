@@ -23,7 +23,11 @@ let info = {
     cpu_cores: (sys | get cpu | length)
     memory: (sys).mem.total
     machine_name: (sys).host.hostname
-    user: $env.USER
+    user: (try { 
+        $env.USER # unix
+    } catch { 
+        $env.USERNAME # windows
+    }),
     rust: (rustc --version)
 }
 
