@@ -7,7 +7,7 @@ hyperfine --export-json ../tmp-wim-app-bench.json --warmup 0 --runs=1 --setup 'c
 cd ..
 
 cd wim-mod
-hyperfine --export-json ../tmp-wim-mod-bench.json --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' 'cargo check' 'cargo clippy' 'cargo build -r' 'mbark build'
+hyperfine --export-json ../tmp-wim-mod-bench.json --warmup 0 --runs=1 --setup 'cargo fetch' --prepare 'cargo clean' 'cargo check' 'cargo clippy' 'cargo build -r' './mbark build'
 cd ..
 
 # combine the benchmark outputs to single table
@@ -24,7 +24,7 @@ let info = {
     cpu_cores: (sys | get cpu | length)
     memory: (sys).mem.total
     machine_name: (sys).host.hostname
-    user: ($env.USER? | default $env.USERNAME), # unix & windows handling, can switch to `whoami` once 0.86.1 is out (started thread https://github.com/nushell/nushell/discussions/10979)
+    user: (do { $env.USER } catch { $env.USERNAME }), # unix & windows handling, can switch to `whoami` once 0.86.1 is out (started thread https://github.com/nushell/nushell/discussions/10979)
     rust: (rustc --version)
 }
 
