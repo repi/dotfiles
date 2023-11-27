@@ -801,7 +801,7 @@ alias cdc = cargo deny --all-features check
 # Git pull latest
 alias gpr = git pull --rebase
 # Git pull latest autostash
-alias gupa = git pull --rebase --autostash
+alias gpra = git pull --rebase --autostash
 # Git push
 alias gp = git push
 # Git ammend commit with current
